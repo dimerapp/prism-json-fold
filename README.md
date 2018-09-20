@@ -6,6 +6,16 @@
 [![travis-image]][travis-url]
 [![npm-image]][npm-url]
 
+## Table of Contents
+* [Setup](#setup)
+* [Why parse the HTML?](#why-parse-the-html)
+  * [Tips to improve speed](#tips-to-improve-speed)
+* [CSS](#css)
+* [Event listeners](#event-listeners)
+* [Change log](#change-log)
+* [Contributing](#contributing)
+* [Authors &amp; License](#authors--license)
+
 This plugin parses the json output of Prism and wraps them inside groups to make them foldable. In nutshell it does the following:
 
 1. Adds a `before-update` hook to Prism hooks system.
