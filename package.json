@@ -1,0 +1,73 @@
+{
+  "name": "prism-json-fold",
+  "version": "1.0.0",
+  "description": "Adds toggle switch to JSON objects and arrays",
+  "main": "dist/prism-json-fold.min.js",
+  "unpkg": "dist/prism-json-fold.min.js",
+  "scripts": {
+    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "pretest": "npm run lint",
+    "test": "japa",
+    "commit": "git-cz",
+    "lint": "standard",
+    "prepublishOnly": "npm run build",
+    "build": "del tmp && bili -c bili.config.js",
+    "benchmark": "bili -c bili-benchmark.config.js && karma start && del tmp"
+  },
+  "keywords": [],
+  "author": "virk",
+  "license": "MIT",
+  "devDependencies": {
+    "@adonisjs/mrm-preset": "^1.0.11",
+    "benchmark": "^2.1.4",
+    "bili": "^3.1.2",
+    "commitizen": "^2.10.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "del-cli": "^1.1.0",
+    "japa": "^1.0.6",
+    "japa-cli": "^1.0.1",
+    "karma": "^3.0.0",
+    "karma-benchmark": "^1.0.0",
+    "karma-benchmark-reporter": "^0.1.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "mrm": "^1.2.1",
+    "pkg-ok": "^2.2.0",
+    "prismjs": "^1.15.0",
+    "standard": "^12.0.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "nyc": {
+    "exclude": [
+      "test",
+      "japaFile.js"
+    ]
+  },
+  "standard": {
+    "globals": [
+      "self",
+      "Prism",
+      "benchmark",
+      "suite"
+    ],
+    "ignore": [
+      "dist",
+      "tmp"
+    ]
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimerapp/prism-json-fold.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dimerapp/prism-json-fold/issues"
+  },
+  "homepage": "https://github.com/dimerapp/prism-json-fold#readme"
+}
