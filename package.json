@@ -29,7 +29,6 @@
     "karma-benchmark": "^1.0.0",
     "karma-benchmark-reporter": "^0.1.1",
     "karma-chrome-launcher": "^2.2.0",
-    "karma-jasmine": "^1.1.2",
     "mrm": "^1.2.1",
     "pkg-ok": "^2.2.0",
     "prismjs": "^1.15.0",

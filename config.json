@@ -2,6 +2,8 @@
   "core": false,
   "ts": false,
   "license": "MIT",
-  "services": [],
+  "services": [
+    "travis"
+  ],
   "minNodeVersion": "8.0.0"
 }
