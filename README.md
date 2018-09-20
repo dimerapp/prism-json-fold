@@ -147,6 +147,9 @@ code .block.open > i.caret:before {
 }
 ```
 
+## Event listeners
+The plugin also attaches an [event listener](index.js#L29) on the `i.caret` to toggle css classes. Ideally these event listeners will be removed by the garbage collector when DOM elements have been removed. However, feel free to ping me if you detect any memory leaks (especially with SPA's).
+
 ## Change log
 The change log can be found in the [CHANGELOG.md](CHANGELOG.md) file.
 
