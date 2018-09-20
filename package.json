@@ -10,6 +10,7 @@
     "test": "japa",
     "commit": "git-cz",
     "lint": "standard",
+    "prepublishOnly": "npm run build",
     "build": "del tmp && bili -c bili.config.js",
     "benchmark": "bili -c bili-benchmark.config.js && karma start && del tmp"
   },
