@@ -97,6 +97,7 @@ code i.caret {
 
 code i.caret:before {
   /** You may have to change this: It only works when using font awesome */
+  position: absolute;
   content: '\25B8';
 }
 
