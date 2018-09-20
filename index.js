@@ -18,6 +18,8 @@ const parser = require('./src/parser');
   }
 
   Prism.hooks.add('before-insert', (env) => {
-    env.highlightedCode = parser(env.highlightedCode)
+    if (env.language === 'json') {
+      env.highlightedCode = parser(env.highlightedCode)
+    }
   })
 })()
