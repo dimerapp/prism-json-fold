@@ -1,0 +1,7 @@
+{
+  "core": false,
+  "ts": false,
+  "license": "MIT",
+  "services": [],
+  "minNodeVersion": "8.0.0"
+}
