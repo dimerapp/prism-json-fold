@@ -1,9 +1,12 @@
 {
   "name": "prism-json-fold",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Adds toggle switch to JSON objects and arrays",
   "main": "dist/prism-json-fold.min.js",
   "unpkg": "dist/prism-json-fold.min.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "mrm": "mrm --preset=@adonisjs/mrm-preset",
     "pretest": "npm run lint",

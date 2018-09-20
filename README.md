@@ -6,6 +6,16 @@
 [![travis-image]][travis-url]
 [![npm-image]][npm-url]
 
+## Table of Contents
+* [Setup](#setup)
+* [Why parse the HTML?](#why-parse-the-html)
+  * [Tips to improve speed](#tips-to-improve-speed)
+* [CSS](#css)
+* [Event listeners](#event-listeners)
+* [Change log](#change-log)
+* [Contributing](#contributing)
+* [Authors &amp; License](#authors--license)
+
 This plugin parses the json output of Prism and wraps them inside groups to make them foldable. In nutshell it does the following:
 
 1. Adds a `before-update` hook to Prism hooks system.
@@ -59,11 +69,98 @@ Chrome 69.0.3497 (Mac OS X 10.13.6)  Large sample: Without json fold at 1995 ops
 Chrome 69.0.3497 (Mac OS X 10.13.6)  Large sample: With json fold at 1431 ops/sec
 ```
 
-## Tips to improve speed
+### Tips to improve speed
 In ideal situation, you must load and run PrismJs inside a worker. It will avoid blocking the UI completely and helps in delivering better experience. Learn more about [loading prism inside a worker]().
 
-## Change log
+## CSS
+The following CSS is required to get the desired output. Feel free to modify the CSS as per your needs (if required).
 
+> Not everything requires changes. So I have added a comment `You may have to change this`, for properties that may require changes.
+
+```css
+code .block {
+ position: relative;
+}
+
+code i.caret {
+  position: absolute;
+  font-style: normal;
+  cursor: pointer;
+
+  /** You may have to change this */
+  width: 10px;
+  height: 10px;
+  top: -3px;
+  left: -12px;
+  color: #ccc;
+}
+
+code i.caret:before {
+  /** You may have to change this: It only works when using font awesome */
+  content: '\25B8';
+}
+
+code .block-wrapper {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  vertical-align: top;
+  
+  /** You may have to modify this */
+  max-height: 24px;
+  max-width: 45px;
+  color: #ccc;
+}
+
+code .block-wrapper > * {
+  opacity: 0;
+}
+
+code .block-wrapper:before {
+  content: '...';
+  top: -2px;
+  position: absolute;
+  left: 3px;
+}
+
+code .block-wrapper:after {
+  top: 0px;
+  position: absolute;
+  right: 0;
+}
+
+code .block-keyed-object > .block-wrapper:after,
+code .block-object > .block-wrapper:after {
+  content: '}';
+}
+
+code .block-keyed-array > .block-wrapper:after,
+code .block-array > .block-wrapper:after {
+  content: ']';
+}
+
+code .block.open > .block-wrapper {
+  display: initial;
+}
+
+code .block.open > .block-wrapper > * {
+  opacity: 1;
+}
+
+code .block.open > .block-wrapper:before,
+code .block.open > .block-wrapper:after {
+  display: none;
+}
+
+code .block.open > i.caret:before {
+  transform: rotate(90deg);
+}
+```
+
+## Event listeners
+The plugin also attaches an [event listener](index.js#L29) on the `i.caret` to toggle css classes. Ideally these event listeners will be removed by the garbage collector when DOM elements have been removed. However, feel free to ping me if you detect any memory leaks (especially with SPA's).
+
+## Change log
 The change log can be found in the [CHANGELOG.md](CHANGELOG.md) file.
 
 ## Contributing

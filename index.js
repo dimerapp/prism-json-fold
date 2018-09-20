@@ -22,4 +22,17 @@ const parser = require('./src/parser');
       env.highlightedCode = parser(env.highlightedCode)
     }
   })
+
+  /**
+   * Add event listener to toggle the groups
+   */
+  Prism.hooks.add('complete', function (env) {
+    if (env.language === 'json') {
+      env.element.querySelectorAll('.block i').forEach(function (block) {
+        block.addEventListener('click', function () {
+          this.parentElement.classList.toggle('open')
+        })
+      })
+    }
+  })
 })()
