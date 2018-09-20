@@ -3,6 +3,7 @@
 
 ![](https://res.cloudinary.com/adonisjs/image/upload/q_100/v1537431260/prism-json-fold_vhw5tf.gif)
 
+[![travis-image]][travis-url]
 [![npm-image]][npm-url]
 
 This plugin parses the json output of Prism and wraps them inside groups to make them foldable. In nutshell it does the following:
@@ -77,6 +78,9 @@ Everyone is welcome to contribute. Please take a moment to review the [contribut
 [Harminder Virk](https://github.com/thetutlage) and [contributors](https://github.com/dimerapp/prism-json-fold/graphs/contributors).
 
 MIT License, see the included [MIT](LICENSE.md) file.
+
+[travis-image]: https://img.shields.io/travis/dimerapp/prism-json-fold/master.svg?style=flat-square&logo=travis
+[travis-url]: https://travis-ci.org/dimerapp/prism-json-fold "travis"
 
 [npm-image]: https://img.shields.io/npm/v/prism-json-fold.svg?style=flat-square&logo=npm
 [npm-url]: https://npmjs.org/package/prism-json-fold "npm"
